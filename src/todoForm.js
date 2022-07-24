@@ -1,4 +1,4 @@
-const loadForm = () => {
+const loadTodoForm = () => {
     const content = document.getElementById("content");
 
     const todoFormDiv = document.createElement("div");
@@ -65,4 +65,4 @@ const loadForm = () => {
     })
 }
 
-export { loadForm }
+export { loadTodoForm }

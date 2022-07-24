@@ -60,11 +60,6 @@ body {
     align-self: center;
 }
 
-.new_project {
-    align-self: flex-end;
-    font-size: 12px;
-    margin-right: 20px;
-}
 
 .side_menu button:hover{
     cursor: pointer;
@@ -76,10 +71,6 @@ body {
     transition: 0.5s;
 }
 
-.new_project:hover{
-    font-size: 14px;
-    transition: 0.5s;
-}
 
 .header > h1{
     margin: 0;
@@ -95,13 +86,15 @@ body {
     background-color: var(--bg_color);
 }
 
-.todos_main_title{
+.todos_main_title,
+.projects_main_title {
     font-family: var(--font);
     margin-left: 10%;
     margin-top: 10%;
 }
 
-.new_todo_button {
+.new_todo_button,
+.new_project_button {
     padding: 6px 12px;
     font-family: var(--font);
     border: 1px solid var(--head_color);
@@ -111,7 +104,8 @@ body {
     margin-left: 15%;
 }
 
-.new_todo_button:hover {
+.new_todo_button:hover,
+.new_project_button:hover {
     background-color: var(--text_color);
     color: var(--side_color);
     cursor: pointer;
@@ -120,10 +114,13 @@ body {
 
 /* form */
 
-#todo_form {
-    margin: 100px;
+#todo_form,
+#project_form {
+    width: 400px;
+    margin: 50px auto;
     font-family: var(--font);
-    display: none;
+    display: none; 
+    z-index: 9; 
 }
 
 .form_container {
@@ -135,7 +132,6 @@ body {
     border: 1px solid var(--head_color);
     border-radius: 10px;
     padding: 20px;
-    z-index: 9; 
 }
 
 .form_container > h1{
@@ -144,6 +140,7 @@ body {
 }
 
 #todo_title,
+#project_title,
 #todo_description,
 #todo_date,
 #todo_project {
@@ -152,6 +149,14 @@ body {
     font-size: 1rem;
     border: 1px solid var(--head_color);
     border-radius: 8px;
+}
+
+#todo_title:focus,
+#project_title:focus,
+#todo_description:focus,
+#todo_date:focus,
+#todo_project:focus {
+    outline: 1.5px solid var(--head_color);
 }
 
 .form_buttons {
