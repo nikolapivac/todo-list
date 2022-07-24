@@ -17,8 +17,10 @@ body {
     margin: 0;
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 12fr;
+    grid-template-rows: 1fr 13fr;
 }
+
+/* --- header --- */
 
 .header {
     display: flex;
@@ -30,6 +32,8 @@ body {
     grid-row: 1 / 2;
     font-family: var(--head_font);
 }
+
+/* --- side menu --- */
 
 .side_menu {
     grid-column: 1 / 2;
@@ -77,21 +81,105 @@ body {
     transition: 0.5s;
 }
 
-.content {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    background-color: var(--bg_color);
-}
-
 .header > h1{
     margin: 0;
     color: var(--text_color);
     letter-spacing: 2px;
 }
 
+/* --- content --- */
 
-.form_popup{
-    display: none;
-    z-index: 9;
+.content {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background-color: var(--bg_color);
 }
 
+.todos_main_title{
+    font-family: var(--font);
+    margin-left: 10%;
+    margin-top: 10%;
+}
+
+.new_todo_button {
+    padding: 6px 12px;
+    font-family: var(--font);
+    border: 1px solid var(--head_color);
+    border-radius: 8px;
+    background-color: var(--side_color);
+    color: var(--text_color);
+    margin-left: 15%;
+}
+
+.new_todo_button:hover {
+    background-color: var(--text_color);
+    color: var(--side_color);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+/* form */
+
+#todo_form {
+    margin: 100px;
+    font-family: var(--font);
+    display: none;
+}
+
+.form_container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 16px;
+    background-color: var(--text_color);
+    border: 1px solid var(--head_color);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 9; 
+}
+
+.form_container > h1{
+    margin: 0;
+    font-size: 2rem;
+}
+
+#todo_title,
+#todo_description,
+#todo_date,
+#todo_project {
+    padding: 8px;
+    font-family: var(--font);
+    font-size: 1rem;
+    border: 1px solid var(--head_color);
+    border-radius: 8px;
+}
+
+.form_buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 15px;
+}
+
+.add_btn,
+.close_btn {
+    padding: 8px 16px;
+    font-family: var(--font);
+    border: 1px solid var(--head_color);
+    border-radius: 8px;
+    background-color: var(--side_color);
+    color: var(--text_color);
+}
+
+.add_btn:hover {
+    background-color: var(--text_color);
+    color: var(--side_color);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.close_btn:hover {
+    background-color: rgb(162, 117, 117);
+    color: var(--side_color);
+    cursor: pointer;
+    transition: 0.5s;
+}
