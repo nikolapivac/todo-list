@@ -1,5 +1,4 @@
 import { createNewTodo } from "./newTodo";
-import { handleTodoExpansion } from "./todoDetails";
 
 const loadTodoForm = () => {
     const content = document.getElementById("content");
@@ -79,7 +78,7 @@ const loadTodoForm = () => {
 
         const newTodo = createNewTodo(title, desc, date, project);
         todoContainer.appendChild(newTodo);
-        handleTodoExpansion();
+        form.style.display = "none";
     })
 }
 

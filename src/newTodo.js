@@ -1,10 +1,39 @@
+import { deleteTodoCard } from "./deleteTodo";
+import { expandTodoCard } from "./expandTodo";
+
 const createNewTodo = (title, desc, date, project) => {
     const todo = document.createElement("div");
     todo.classList.add("todo_card");
 
+    const todoHeader = document.createElement("div");
+    todoHeader.classList.add("todo_card_header");
+
     const todoTitle = document.createElement("h1");
     todoTitle.classList.add("todo_card_title");
     todoTitle.textContent = `${title}`;
+
+    const options = document.createElement("div");
+    options.classList.add("todo_card_options");
+    
+    const expandTodo = document.createElement("i");
+    expandTodo.classList.add("gg-more-alt");
+    options.appendChild(expandTodo);
+
+    expandTodo.addEventListener("click", (e) => {
+        e.preventDefault();
+        expandTodoCard(todo);
+    })
+
+    const deleteTodo = document.createElement("i");
+    deleteTodo.classList.add("gg-trash");
+    options.appendChild(deleteTodo);
+
+    deleteTodo.addEventListener("click", (e) => {
+        e.preventDefault();
+        deleteTodoCard(todo);
+    })
+
+    
 
     const todoDesc = document.createElement("p");
     todoDesc.classList.add("todo_card_desc");
@@ -18,7 +47,9 @@ const createNewTodo = (title, desc, date, project) => {
     todoProject.classList.add("todo_card_project");
     todoProject.textContent = `Project: ${project}`;
 
-    todo.appendChild(todoTitle);
+    todoHeader.appendChild(todoTitle);
+    todoHeader.appendChild(options);
+    todo.appendChild(todoHeader);
     todo.appendChild(todoDesc);
     todo.appendChild(todoDate);
     todo.appendChild(todoProject);

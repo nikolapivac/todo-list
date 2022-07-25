@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Titillium+Web:wght@200;300;400&display=swap');
+@import url('https://css.gg/trash.css');
+@import url('https://css.gg/more-alt.css');
 
 * {
     /* --- colors --- */
@@ -119,8 +121,7 @@ body {
 #project_form {
     width: 400px;
     margin: 50px auto;
-    font-family: var(--font);
-    display: none; 
+    font-family: var(--font); 
     z-index: 9; 
 }
 
@@ -202,9 +203,30 @@ body {
     border-radius: 16px;
 }
 
-.todo_card:hover {
-    cursor: pointer;
+.todo_card:hover{
     box-shadow: var(--shadow);
+}
+
+.todo_card_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo_card_options {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.gg-trash:hover{
+    color: rgb(162, 117, 117);
+    cursor: pointer;
+}
+
+.gg-more-alt:hover {
+    color: var(--text_color);
+    cursor: pointer;
 }
 
 .todo_card_title {

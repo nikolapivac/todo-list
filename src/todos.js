@@ -17,13 +17,10 @@ const loadTodos = () => {
     todoContainer.classList.add("todo_container");
     content.appendChild(todoContainer);
 
-    loadTodoForm();
-   
+    
     newTodoBtn.addEventListener("click", () => {
-        const form = document.getElementById("todo_form");
-        form.style.display = "block";
+        loadTodoForm();
     })
-
 }
 
 export { loadTodos }
