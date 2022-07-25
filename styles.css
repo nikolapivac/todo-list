@@ -102,6 +102,7 @@ body {
     background-color: var(--side_color);
     color: var(--text_color);
     margin-left: 15%;
+    box-shadow: var(--shadow);
 }
 
 .new_todo_button:hover,
@@ -173,6 +174,7 @@ body {
     border-radius: 8px;
     background-color: var(--side_color);
     color: var(--text_color);
+    box-shadow: var(--shadow);
 }
 
 .add_btn:hover {
@@ -187,4 +189,38 @@ body {
     color: var(--side_color);
     cursor: pointer;
     transition: 0.5s;
+}
+
+/* cards */
+
+.todo_card {
+    margin: 30px 10%;
+    background-color: var(--bg_color);
+    color: var(--head_color);
+    font-family: var(--font);
+    padding: 4px 32px;
+    border-radius: 16px;
+}
+
+.todo_card:hover {
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+
+.todo_card_title {
+    color: var(--side_color);
+    margin: 0;
+}
+
+.todo_card_desc {
+    display: none;
+}
+
+.todo_card_date {
+    margin: 0;
+    padding-bottom: 4px;
+}
+
+.todo_card_project {
+    display: none;
 }
