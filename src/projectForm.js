@@ -36,7 +36,8 @@ const loadProjectForm = () => {
     closeBtn.textContent = "Close";
     buttonDiv.appendChild(closeBtn);
 
-    closeBtn.addEventListener("click", () => {
+    closeBtn.addEventListener("click", (e) => {
+        e.preventDefault();
         projectFormDiv.style.display = "none";
     })
 }

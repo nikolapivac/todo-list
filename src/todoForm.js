@@ -1,5 +1,9 @@
+import { createNewTodo } from "./newTodo";
+import { handleTodoExpansion } from "./todoDetails";
+
 const loadTodoForm = () => {
     const content = document.getElementById("content");
+    const todoContainer = document.querySelector(".todo_container");
 
     const todoFormDiv = document.createElement("div");
     todoFormDiv.classList.add("form_popup");
@@ -60,8 +64,22 @@ const loadTodoForm = () => {
     closeBtn.textContent = "Close";
     buttonDiv.appendChild(closeBtn);
 
-    closeBtn.addEventListener("click", () => {
+    closeBtn.addEventListener("click", (e) => {
+        e.preventDefault();
         todoFormDiv.style.display = "none";
+    })
+
+    addBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const title = document.getElementById("todo_title").value;
+        const desc = document.getElementById("todo_description").value;
+        const date = document.getElementById("todo_date").value;
+        const selectProject = document.getElementById("todo_project");
+        const project = selectProject.options[selectProject.selectedIndex].value;
+
+        const newTodo = createNewTodo(title, desc, date, project);
+        todoContainer.appendChild(newTodo);
+        handleTodoExpansion();
     })
 }
 

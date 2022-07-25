@@ -18,11 +18,12 @@ const loadTodos = () => {
     content.appendChild(todoContainer);
 
     loadTodoForm();
-
+   
     newTodoBtn.addEventListener("click", () => {
         const form = document.getElementById("todo_form");
         form.style.display = "block";
     })
+
 }
 
 export { loadTodos }
