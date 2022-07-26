@@ -18,10 +18,11 @@ const loadProjects = () => {
     content.appendChild(projectContainer);
 
     loadProjectForm();
-
     newProjectBtn.addEventListener("click", () => {
-        const form = document.getElementById("project_form");
-        form.style.display = "block";
+        const projectForm = document.querySelector(".form_popup");
+        projectForm.style.display = "block";
+        projectContainer.style.opacity = "0.5";
+        newProjectBtn.style.opacity = "0.5";
     })
 }
 

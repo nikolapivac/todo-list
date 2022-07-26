@@ -12,15 +12,21 @@ const loadTodos = () => {
     newTodoBtn.classList.add("new_todo_button");
     newTodoBtn.textContent = "+ New Todo";
     content.appendChild(newTodoBtn);
-
+    
     const todoContainer = document.createElement("div");
     todoContainer.classList.add("todo_container");
     content.appendChild(todoContainer);
+    
+    loadTodoForm();
+    newTodoBtn.addEventListener("click", () => {
+        const todoForm = document.querySelector(".form_popup");
+        todoForm.style.display = "block";
+        todoContainer.style.opacity = "0.5";
+        newTodoBtn.style.opacity = "0.5";
+    })
+
 
     
-    newTodoBtn.addEventListener("click", () => {
-        loadTodoForm();
-    })
 }
 
 export { loadTodos }

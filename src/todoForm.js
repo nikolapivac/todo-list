@@ -1,8 +1,10 @@
 import { createNewTodo } from "./newTodo";
 
+
 const loadTodoForm = () => {
     const content = document.getElementById("content");
     const todoContainer = document.querySelector(".todo_container");
+    const newTodoBtn = document.querySelector(".new_todo_button");
 
     const todoFormDiv = document.createElement("div");
     todoFormDiv.classList.add("form_popup");
@@ -66,6 +68,8 @@ const loadTodoForm = () => {
     closeBtn.addEventListener("click", (e) => {
         e.preventDefault();
         todoFormDiv.style.display = "none";
+        todoContainer.style.opacity = "1";
+        newTodoBtn.style.opacity = "1";
     })
 
     addBtn.addEventListener("click", (e) => {
@@ -78,7 +82,10 @@ const loadTodoForm = () => {
 
         const newTodo = createNewTodo(title, desc, date, project);
         todoContainer.appendChild(newTodo);
-        form.style.display = "none";
+        todoFormDiv.style.display = "none";
+        todoContainer.style.opacity = "1";
+        newTodoBtn.style.opacity = "1";
+        form.reset();
     })
 }
 

@@ -1,5 +1,9 @@
+import { createNewProject } from "./newProject";
+
 const loadProjectForm = () => {
     const content = document.getElementById("content");
+    const projectContainer = document.querySelector(".project_container");
+    const newProjectBtn = document.querySelector(".new_project_button");
 
     const projectFormDiv = document.createElement("div");
     projectFormDiv.classList.add("form_popup");
@@ -39,6 +43,20 @@ const loadProjectForm = () => {
     closeBtn.addEventListener("click", (e) => {
         e.preventDefault();
         projectFormDiv.style.display = "none";
+        projectContainer.style.opacity = "1";
+        newProjectBtn.style.opacity = "1";
+    })
+
+    addBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const title = document.getElementById("project_title").value;
+
+        const newProject = createNewProject(title);
+        projectContainer.appendChild(newProject);
+        projectFormDiv.style.display = "none";
+        projectContainer.style.opacity = "1";
+        newProjectBtn.style.opacity = "1";
+        form.reset();
     })
 }
 
