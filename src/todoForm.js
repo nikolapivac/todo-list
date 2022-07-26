@@ -1,6 +1,7 @@
 import { createNewTodo } from "./newTodo";
 import { listOfProjects } from "./projectForm";
 
+let listOfTodos = [];
 
 const loadTodoForm = () => {
     const content = document.getElementById("content");
@@ -89,6 +90,20 @@ const loadTodoForm = () => {
 
         const newTodo = createNewTodo(title, desc, date, project);
         todoContainer.appendChild(newTodo);
+        listOfTodos.push(newTodo);
+
+        listOfProjects.forEach(item => {
+            if(item.querySelector(".project_card_title").textContent === project){
+                const list = item.querySelector(".todos_of_project");
+                const listItem = document.createElement("div");
+                listItem.classList.add("todo_under_project");
+                const listItemTitle = document.createElement("h1");
+                listItemTitle.textContent = `${title}`;
+                listItem.appendChild(listItemTitle);
+                list.appendChild(listItem);
+            }
+        })
+
         todoFormDiv.style.display = "none";
         todoContainer.style.opacity = "1";
         newTodoBtn.style.opacity = "1";
@@ -96,4 +111,4 @@ const loadTodoForm = () => {
     })
 }
 
-export { loadTodoForm }
+export { loadTodoForm, listOfTodos }

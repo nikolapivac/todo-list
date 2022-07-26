@@ -66,7 +66,7 @@ const createNewTodo = (title, desc, date, project) => {
 
     const todoProject = document.createElement("p");
     todoProject.classList.add("todo_card_project");
-    todoProject.textContent = `Project: ${project}`;
+    todoProject.textContent = `${project}`;
 
     todoHeader.appendChild(todoTitle);
     todoHeader.appendChild(options);
