@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&family=Titillium+Web:wght@200;300;400&display=swap');
 @import url('https://css.gg/trash.css');
 @import url('https://css.gg/more-alt.css');
+@import url('https://css.gg/check-r.css');
 
 * {
+    box-sizing: border-box;
     /* --- colors --- */
     --bg_color: rgb(199, 199, 199);
     --head_color: rgb(61, 61, 61);
@@ -120,9 +122,11 @@ body {
 #todo_form,
 #project_form {
     width: 400px;
-    margin: 50px auto;
+    margin: 50px 300px;
     font-family: var(--font); 
-    z-index: 9; 
+    display: none;
+    position: relative;
+    z-index: 2; 
 }
 
 .form_container {
@@ -135,6 +139,14 @@ body {
     border-radius: 10px;
     padding: 20px;
 }
+
+.todo_container,
+.project_container {
+    position: absolute;
+    z-index: 1;
+    width: 80%;
+}
+
 
 .form_container > h1{
     margin: 0;
@@ -194,7 +206,8 @@ body {
 
 /* cards */
 
-.todo_card {
+.todo_card,
+.project_card {
     margin: 30px 10%;
     background-color: var(--bg_color);
     color: var(--head_color);
@@ -203,46 +216,73 @@ body {
     border-radius: 16px;
 }
 
-.todo_card:hover{
+.todo_card:hover,
+.project_card:hover{
     box-shadow: var(--shadow);
+    transition: 0.5s;
 }
 
-.todo_card_header {
+.todo_card_header,
+.project_card_header {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.todo_card_options {
+.todo_card_options,
+.project_card_options{
     display: flex;
     gap: 25px;
     align-items: center;
+    justify-content: space-between;
+}
+
+.gg-check-r,
+.gg-trash,
+.gg-more-alt {
+    color: var(--side_color);
+}
+
+.gg-trash {
+    margin-left: 4px;
 }
 
 .gg-trash:hover{
     color: rgb(162, 117, 117);
     cursor: pointer;
+    transition: 0.5s;
 }
 
-.gg-more-alt:hover {
+.gg-more-alt:hover,
+.gg-check-r:hover {
     color: var(--text_color);
     cursor: pointer;
+    transition: 0.5s;
 }
 
-.todo_card_title {
+.todo_card_title,
+.project_card_title {
     color: var(--side_color);
     margin: 0;
+    padding-top: 8px;
 }
 
 .todo_card_desc {
     display: none;
+    margin: 8px;
+    padding-left: 16px;
+    font-size: 20px;
 }
 
 .todo_card_date {
     margin: 0;
     padding-bottom: 4px;
+    font-style: italic;
 }
 
 .todo_card_project {
+    margin: 0;
+    font-style: italic;
+    padding-bottom: 4px;
     display: none;
 }
