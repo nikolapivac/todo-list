@@ -13,8 +13,7 @@ const loadTodos = () => {
     newTodoBtn.textContent = "+ New Todo";
     content.appendChild(newTodoBtn);
     
-    const todoContainer = document.createElement("div");
-    todoContainer.classList.add("todo_container");
+    const todoContainer = document.querySelector(".todo_container");
     content.appendChild(todoContainer);
     
     loadTodoForm();
@@ -24,8 +23,6 @@ const loadTodos = () => {
         todoContainer.style.opacity = "0.5";
         newTodoBtn.style.opacity = "0.5";
     })
-
-
     
 }
 

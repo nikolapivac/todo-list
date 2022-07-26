@@ -1,5 +1,6 @@
 import { createNewProject } from "./newProject";
 
+
 const loadProjectForm = () => {
     const content = document.getElementById("content");
     const projectContainer = document.querySelector(".project_container");

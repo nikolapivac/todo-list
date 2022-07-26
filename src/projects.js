@@ -13,8 +13,7 @@ const loadProjects = () => {
     newProjectBtn.textContent = "+ New Project";
     content.appendChild(newProjectBtn);
 
-    const projectContainer = document.createElement("div");
-    projectContainer.classList.add("project_container");
+    const projectContainer = document.querySelector(".project_container");
     content.appendChild(projectContainer);
 
     loadProjectForm();
