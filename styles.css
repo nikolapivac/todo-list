@@ -286,3 +286,12 @@ body {
     padding-bottom: 4px;
     display: none;
 }
+
+.todo_under_project {
+    background-color: var(--head_color);
+    color: var(--bg_color);
+    padding-left: 16px;
+    font-size: 10px;
+    border-radius: 8px;
+    display: none;
+}
