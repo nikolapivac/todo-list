@@ -1,4 +1,5 @@
 import { createNewTodo } from "./newTodo";
+import { listOfProjects } from "./projectForm";
 
 
 const loadTodoForm = () => {
@@ -44,10 +45,16 @@ const loadTodoForm = () => {
     projectInput.setAttribute("name", "project");
     projectInput.setAttribute("placeholder", "Project");
     projectInput.setAttribute("id", "todo_project");
-    const projectName = document.createElement("option");
-    projectName.setAttribute("value", "Todos");
-    projectName.textContent = "Todos";
-    projectInput.appendChild(projectName);
+    const defaultProjectName = document.createElement("option");
+    defaultProjectName.setAttribute("value", "Todos (default)");
+    defaultProjectName.textContent = "Todos (default)";
+    projectInput.appendChild(defaultProjectName);
+    listOfProjects.forEach(project => {
+        const projectName = document.createElement("option");
+        projectName.setAttribute("value", `${(project.querySelector(".project_card_title")).textContent}`);
+        projectName.textContent = `${(project.querySelector(".project_card_title")).textContent}`;
+        projectInput.appendChild(projectName);
+    })
     form.appendChild(projectInput);
 
     const buttonDiv = document.createElement("div");

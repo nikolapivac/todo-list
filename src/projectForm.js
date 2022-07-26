@@ -1,5 +1,6 @@
 import { createNewProject } from "./newProject";
 
+let listOfProjects = [];
 
 const loadProjectForm = () => {
     const content = document.getElementById("content");
@@ -54,6 +55,7 @@ const loadProjectForm = () => {
 
         const newProject = createNewProject(title);
         projectContainer.appendChild(newProject);
+        listOfProjects.push(newProject);
         projectFormDiv.style.display = "none";
         projectContainer.style.opacity = "1";
         newProjectBtn.style.opacity = "1";
@@ -61,4 +63,4 @@ const loadProjectForm = () => {
     })
 }
 
-export { loadProjectForm }
+export { loadProjectForm, listOfProjects }
