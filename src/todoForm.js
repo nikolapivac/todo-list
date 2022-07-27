@@ -97,10 +97,7 @@ const loadTodoForm = () => {
                 const list = item.querySelector(".todos_of_project");
                 const listItem = document.createElement("div");
                 listItem.classList.add("todo_under_project");
-                const listItemTitle = document.createElement("h1");
-                listItemTitle.textContent = `${title}`;
-                listItem.appendChild(listItemTitle);
-                list.appendChild(listItem);
+                list.appendChild(newTodo);
             }
         })
 

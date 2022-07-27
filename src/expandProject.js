@@ -1,5 +1,5 @@
 const expandProjectCard = (project) => {
-    const listItem = document.querySelector(".todo_under_project");
+    const listItem = project.querySelector(".todos_of_project");
 
     if (listItem.style.display === "none") {
         listItem.style.display = "block";
