@@ -100,7 +100,6 @@ const loadTodoForm = () => {
                 list.appendChild(newTodo);
             }
         })
-
         todoFormDiv.style.display = "none";
         todoContainer.style.opacity = "1";
         newTodoBtn.style.opacity = "1";

@@ -17,6 +17,7 @@ const loadTodos = () => {
     const todoContainer = document.querySelector(".todo_container");
     content.appendChild(todoContainer);
     
+    
     loadTodoForm();
     newTodoBtn.addEventListener("click", () => {
         const todoForm = document.querySelector(".form_popup");
