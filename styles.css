@@ -21,7 +21,7 @@ body {
     margin: 0;
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 13fr;
+    grid-template-rows: 50px 100vh;
 }
 
 /* --- header --- */
@@ -296,6 +296,54 @@ body {
     border: 2px solid var(--head_color);
 }
 
+
+@media only screen and (max-width: 400px){
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .side_menu {
+        padding: 0;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .todos_main_title,
+    .projects_main_title {
+        font-size: 32px;
+        margin-bottom: 4px;
+    }
+
+    #todo_form,
+    #project_form {
+        width: 300px;
+        margin: 40px;
+    }
+
+    .todo_card,
+    .project_card {
+        margin: 30px 20px;
+        padding: 4px 24px;
+        width: 340px;
+    }
+
+    .todo_card_title,
+    .project_card_title {
+        font-size: 24px;
+    }
+
+    .todo_card_date,
+    .todo_card_project {
+        font-size: 16px;
+    }
+
+    .todos_of_project > .todo_card{
+        width: 290px;
+        margin-left: 0;
+    }
+
+}
 
 
 
